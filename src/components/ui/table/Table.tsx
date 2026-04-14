@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import React, { useMemo } from 'react';
-import { TableConfig } from './types';
-import TableHeader from './TableHeader';
-import TableBody from './TableBody';
-import { Database } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import React, { useMemo } from "react";
+import { TableConfig } from "./types";
+import TableHeader from "./TableHeader";
+import TableBody from "./TableBody";
+import { Database } from "lucide-react";
+import { cn } from "@/src/lib/utils";
 
 interface TableProps<T = unknown> extends TableConfig<T> {
   className?: string;
@@ -17,11 +17,11 @@ const Table = <T extends Record<string, unknown>>({
   data,
   loading = false,
   // emptyText = "No data available",
-  rowKey = 'id',
+  rowKey = "id",
   onRow,
   // pagination,
   scroll,
-  size = 'middle',
+  size = "middle",
   bordered = false,
   striped = false,
   hoverable = true,
@@ -32,7 +32,7 @@ const Table = <T extends Record<string, unknown>>({
 }: TableProps<T>) => {
   // Generate unique row keys
   const getRowKey = (record: T, index: number): string | number => {
-    if (typeof rowKey === 'function') {
+    if (typeof rowKey === "function") {
       return rowKey(record);
     }
     return (record[rowKey] as string | number) || index;
@@ -40,25 +40,25 @@ const Table = <T extends Record<string, unknown>>({
 
   // Size-based styling
   const sizeClasses = {
-    small: 'text-xs',
-    middle: 'text-sm',
-    large: 'text-base',
+    small: "text-xs",
+    middle: "text-sm",
+    large: "text-base",
   };
 
   // Table container classes
   const tableContainerClasses = cn(
-    'relative overflow-hidden',
-    scroll?.x && 'overflow-x-auto',
-    scroll?.y && 'overflow-y-auto',
-    className
+    "relative overflow-hidden",
+    scroll?.x && "overflow-x-auto",
+    scroll?.y && "overflow-y-auto",
+    className,
   );
 
   // Table classes
   const tableClasses = cn(
-    'w-full border-collapse',
+    "w-full border-collapse",
     sizeClasses[size],
-    bordered && 'border border-border',
-    'min-w-full'
+    bordered && "border border-border",
+    "min-w-full",
   );
 
   // Handle scroll styles
@@ -66,11 +66,11 @@ const Table = <T extends Record<string, unknown>>({
     const styles: React.CSSProperties = {};
     if (scroll?.x) {
       styles.minWidth =
-        typeof scroll.x === 'number' ? `${scroll.x}px` : scroll.x;
+        typeof scroll.x === "number" ? `${scroll.x}px` : scroll.x;
     }
     if (scroll?.y) {
       styles.maxHeight =
-        typeof scroll.y === 'number' ? `${scroll.y}px` : scroll.y;
+        typeof scroll.y === "number" ? `${scroll.y}px` : scroll.y;
     }
     return styles;
   }, [scroll]);

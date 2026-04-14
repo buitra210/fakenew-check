@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-'use client';
+"use client";
 
-import { cn } from '@/lib/utils';
-import { TableColumn } from './types';
+import { cn } from "@/src/lib/utils";
+import { TableColumn } from "./types";
 
 interface TableCellProps<T = any> {
   column: TableColumn<T>;
@@ -24,17 +24,17 @@ const TableCell = <T extends Record<string, any>>({
     : rawValue;
 
   const alignClasses = {
-    left: 'text-left',
-    center: 'text-center',
-    right: 'text-right',
+    left: "text-left",
+    center: "text-center",
+    right: "text-right",
   };
 
   return (
     <td
       className={cn(
-        'px-4 py-3',
-        alignClasses[column.align || 'left'],
-        column.cellClassName
+        "px-4 py-3",
+        alignClasses[column.align || "left"],
+        column.cellClassName,
       )}
       style={{
         width: column.width,

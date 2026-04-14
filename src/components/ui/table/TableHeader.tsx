@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { TableColumn } from './types';
-import { cn } from '@/lib/utils';
+import React from "react";
+import { TableColumn } from "./types";
+import { cn } from "@/src/lib/utils";
 
 interface TableHeaderProps<T = unknown> {
   columns: TableColumn<T>[];
@@ -16,7 +16,7 @@ const TableHeader = <T extends Record<string, unknown>>({
   style,
 }: TableHeaderProps<T>) => {
   return (
-    <thead className={cn('bg-muted/50', className)} style={style}>
+    <thead className={cn("bg-muted/50", className)} style={style}>
       <tr>
         {columns.map((column) => {
           const headerContent = column.headerRender
@@ -24,22 +24,22 @@ const TableHeader = <T extends Record<string, unknown>>({
             : column.title;
 
           const alignClasses = {
-            left: 'text-left',
-            center: 'text-center',
-            right: 'text-right',
+            left: "text-left",
+            center: "text-center",
+            right: "text-right",
           };
 
           return (
             <th
               key={column.key}
               className={cn(
-                'px-4 py-3 font-semibold text-muted-foreground',
-                'border-b border-border',
-                alignClasses[column.align || 'left'],
+                "px-4 py-3 font-semibold text-muted-foreground",
+                "border-b border-border",
+                alignClasses[column.align || "left"],
                 column.headerClassName,
                 column.sortable &&
-                  'cursor-pointer hover:bg-muted/70 select-none',
-                'whitespace-nowrap'
+                  "cursor-pointer hover:bg-muted/70 select-none",
+                "whitespace-nowrap",
               )}
               style={{
                 width: column.width,
