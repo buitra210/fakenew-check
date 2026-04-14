@@ -3,7 +3,7 @@
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
-  --foreground: #161616;
+  --foreground: #1a1a2e;
   --card: #f4f4f4;
   --card-foreground: oklch(0.141 0.005 285.823);
   --popover: oklch(1 0 0);
@@ -35,8 +35,17 @@
   --FN-Gradient-1: linear-gradient(
     180deg,
     #fff 0%,
-    #4de5c5 30%,
-    #6aabfb 70%,
-    #9133ff 100%
+    #0fb490 30%,
+    #1070e4 60%,
+    #6913cb 100%
   );
+  --FN-Gradient-2: linear-gradient(
+    150deg,
+    #0fb490 30%,
+    #1070e4 60%,
+    #6913cb 100%
+  );
+  --text-shadow: rgba(80, 30, 160, 0.3);
+  --card-bg: #fbfafa;
+  --body-bg: #fffbfe;
 }

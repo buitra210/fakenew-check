@@ -16,7 +16,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div>
       <DevTools />
       <Header />
-      <main className="relative overflow-x-hidden hide-scrollbar">
+      <main className="relative overflow-x-hidden hide-scrollbar min-h-screen" style={{ backgroundColor: "var(--body-bg)" }}>
         {pathname === "/" ? (
           <div
             className="absolute w-screen h-screen opacity-8 pointer-events-none left-[2%] "
