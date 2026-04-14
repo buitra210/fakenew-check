@@ -18,7 +18,6 @@ import {
 export const MENU_ITEMS: MenuItem[] = [
   // { label: 'HOME', href: '/' },
   // { label: 'YIELD AGGREGATOR', href: '/yield-aggregator' },
-  { label: "", href: "/predictions" },
   { label: "REPORT", href: "#content-report" },
   { label: "CHECKING", href: "#check-fakenew" },
   { label: "ANALYSIS", href: "#analysis" },
@@ -45,7 +44,7 @@ export default function Header() {
             <Link href="/" className="flex items-center">
               <Image src="/image/logo1.png" alt="Logo" width={35} height={42} />
             </Link>
-            <h1 className="text-2xl font-semibold hidden md:flex">
+            <h1 className="text-2xl font-semibold hidden md:flex bg-clip-text text-transparent bg-[image:var(--FN-Gradient-2)]">
               CHECKFAKENEW
             </h1>
           </div>
@@ -67,7 +66,7 @@ export default function Header() {
                     } ${item.comingSoon ? "opacity-80" : ""}`}
                     style={
                       isSelected
-                        ? { textShadow: "0 0 16px var(--shadow)" }
+                        ? { textShadow: "0 0 10px var(--shadow)" }
                         : undefined
                     }
                   >
@@ -89,23 +88,43 @@ export default function Header() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-56">
-                {MENU_ITEMS.map((item: MenuItem) => (
-                  <Link
-                    key={item.href}
-                    href={item.comingSoon ? "#" : item.href}
-                  >
-                    <DropdownMenuItem
-                      className={`cursor-pointer ${
-                        item.comingSoon ? "opacity-80" : ""
-                      }`}
+                {MENU_ITEMS.map((item: MenuItem) => {
+                  const isSelected = selectedMenu === item.label;
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.comingSoon ? "#" : item.href}
+                      onClick={() =>
+                        !item.comingSoon && setSelectedMenu(item.label)
+                      }
                     >
-                      {item.icon && (
-                        <span className="shrink-0">{item.icon}</span>
-                      )}
-                      {item.label}
-                    </DropdownMenuItem>
-                  </Link>
-                ))}
+                      <DropdownMenuItem
+                        className={`cursor-pointer ${
+                          item.comingSoon ? "opacity-80" : ""
+                        }`}
+                      >
+                        {item.icon && (
+                          <span className="shrink-0">{item.icon}</span>
+                        )}
+                        <span
+                          style={
+                            isSelected
+                              ? {
+                                  background: "var(--FN-Gradient-1)",
+                                  WebkitBackgroundClip: "text",
+                                  WebkitTextFillColor: "transparent",
+                                  backgroundClip: "text",
+                                  fontWeight: 600,
+                                }
+                              : undefined
+                          }
+                        >
+                          {item.label}
+                        </span>
+                      </DropdownMenuItem>
+                    </Link>
+                  );
+                })}
               </DropdownMenuContent>
             </DropdownMenu>
           </div>

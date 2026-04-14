@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { TableColumn } from './types';
-import TableCell from './TableCell';
-import { cn } from '@/lib/utils';
+import React from "react";
+import { TableColumn } from "./types";
+import TableCell from "./TableCell";
+import { cn } from "@/src/lib/utils";
 
 interface TableRowProps<T = unknown> {
   columns: TableColumn<T>[];
@@ -31,11 +31,11 @@ const TableRow = <T extends Record<string, unknown>>({
   const isEven = index % 2 === 0;
 
   const rowClasses = cn(
-    'border-b border-border last:border-b-0',
-    striped && isEven && 'bg-muted/30',
-    hoverable && 'hover:bg-muted/50 transition-colors',
-    onClick && 'cursor-pointer',
-    className
+    "border-b border-border last:border-b-0",
+    striped && isEven && "bg-muted/30",
+    hoverable && "hover:bg-muted/50 transition-colors",
+    onClick && "cursor-pointer",
+    className,
   );
 
   return (

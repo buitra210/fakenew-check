@@ -42,4 +42,13 @@
     #6aabfb 70%,
     #9133ff 100%
   );
+  --FN-Gradient-2: linear-gradient(
+    150deg,
+    #4de5c5 30%,
+    #6aabfb 70%,
+    #9133ff 100%
+  );
+  --text-shadow: rgba(255, 255, 255, 0.7);
+  --card-bg: #1a1b1f;
+  --body-bg: #07090f;
 }

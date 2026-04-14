@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-'use client';
+"use client";
 
-import React from 'react';
-import { TableColumn } from './types';
-import TableRow from './TableRow';
-import { cn } from '@/lib/utils';
+import React from "react";
+import { TableColumn } from "./types";
+import TableRow from "./TableRow";
+import { cn } from "@/src/lib/utils";
 
 interface TableBodyProps<T = any> {
   columns: TableColumn<T>[];
@@ -12,7 +12,7 @@ interface TableBodyProps<T = any> {
   getRowKey: (record: T, index: number) => string | number;
   onRow?: (
     record: T,
-    index: number
+    index: number,
   ) => {
     onClick?: () => void;
     onDoubleClick?: () => void;

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import * as React from 'react';
-import { ChevronLeft, ChevronRight, MoreHorizontal } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import * as React from "react";
+import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react";
+import { cn } from "@/src/lib/utils";
 
 interface PaginationProps {
   currentPage: number;
@@ -16,8 +16,8 @@ interface PaginationProps {
 function generatePagination(
   currentPage: number,
   totalPages: number,
-  siblingsCount: number = 1
-): (number | 'ellipsis')[] {
+  siblingsCount: number = 1,
+): (number | "ellipsis")[] {
   const totalPageNumbers = siblingsCount * 2 + 5;
 
   if (totalPages <= totalPageNumbers) {
@@ -33,23 +33,23 @@ function generatePagination(
   if (!shouldShowLeftEllipsis && shouldShowRightEllipsis) {
     const leftItemCount = 3 + 2 * siblingsCount;
     const leftRange = Array.from({ length: leftItemCount }, (_, i) => i + 1);
-    return [...leftRange, 'ellipsis', totalPages];
+    return [...leftRange, "ellipsis", totalPages];
   }
 
   if (shouldShowLeftEllipsis && !shouldShowRightEllipsis) {
     const rightItemCount = 3 + 2 * siblingsCount;
     const rightRange = Array.from(
       { length: rightItemCount },
-      (_, i) => totalPages - rightItemCount + i + 1
+      (_, i) => totalPages - rightItemCount + i + 1,
     );
-    return [1, 'ellipsis', ...rightRange];
+    return [1, "ellipsis", ...rightRange];
   }
 
   const middleRange = Array.from(
     { length: rightSiblingIndex - leftSiblingIndex + 1 },
-    (_, i) => leftSiblingIndex + i
+    (_, i) => leftSiblingIndex + i,
   );
-  return [1, 'ellipsis', ...middleRange, 'ellipsis', totalPages];
+  return [1, "ellipsis", ...middleRange, "ellipsis", totalPages];
 }
 
 function Pagination({
@@ -62,7 +62,7 @@ function Pagination({
 }: PaginationProps) {
   const paginationRange = React.useMemo(
     () => generatePagination(currentPage, totalPages, siblingsCount),
-    [currentPage, totalPages, siblingsCount]
+    [currentPage, totalPages, siblingsCount],
   );
 
   if (totalPages <= 1) return null;
@@ -83,7 +83,7 @@ function Pagination({
     <nav
       role="navigation"
       aria-label="pagination"
-      className={cn('flex items-center justify-center gap-1', className)}
+      className={cn("flex items-center justify-center gap-1", className)}
     >
       <PaginationButton
         onClick={handlePrevious}
@@ -95,7 +95,7 @@ function Pagination({
 
       {showPageNumbers &&
         paginationRange.map((page, index) =>
-          page === 'ellipsis' ? (
+          page === "ellipsis" ? (
             <PaginationEllipsis key={`ellipsis-${index}`} />
           ) : (
             <PaginationButton
@@ -103,11 +103,11 @@ function Pagination({
               onClick={() => onPageChange(page)}
               isActive={currentPage === page}
               aria-label={`Go to page ${page}`}
-              aria-current={currentPage === page ? 'page' : undefined}
+              aria-current={currentPage === page ? "page" : undefined}
             >
               {page}
             </PaginationButton>
-          )
+          ),
         )}
 
       <PaginationButton
@@ -121,8 +121,7 @@ function Pagination({
   );
 }
 
-interface PaginationButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface PaginationButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   isActive?: boolean;
 }
 
@@ -136,12 +135,12 @@ function PaginationButton({
   return (
     <button
       className={cn(
-        'inline-flex h-8 min-w-8 items-center justify-center rounded-md px-2 text-sm font-medium transition-all',
-        'hover:bg-[#1a1b1f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
-        'disabled:pointer-events-none disabled:opacity-40',
-        isActive && 'bg-[#1a1b1f] text-white relative',
-        !isActive && !disabled && 'text-muted-foreground hover:text-foreground',
-        className
+        "inline-flex h-8 min-w-8 items-center justify-center rounded-md px-2 text-sm font-medium transition-all",
+        "hover:bg-[#1a1b1f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+        "disabled:pointer-events-none disabled:opacity-40",
+        isActive && "bg-[#1a1b1f] text-white relative",
+        !isActive && !disabled && "text-muted-foreground hover:text-foreground",
+        className,
       )}
       disabled={disabled}
       {...props}
@@ -151,7 +150,7 @@ function PaginationButton({
           className="absolute inset-0 rounded-md pointer-events-none"
           style={{
             background:
-              'linear-gradient(135deg, rgba(77, 229, 197, 0.2) 0%, rgba(106, 171, 251, 0.2) 50%, rgba(145, 51, 255, 0.2) 100%)',
+              "linear-gradient(135deg, rgba(77, 229, 197, 0.2) 0%, rgba(106, 171, 251, 0.2) 50%, rgba(145, 51, 255, 0.2) 100%)",
           }}
         />
       )}
@@ -168,8 +167,8 @@ function PaginationEllipsis({
     <span
       aria-hidden
       className={cn(
-        'flex h-8 w-8 items-center justify-center text-muted-foreground',
-        className
+        "flex h-8 w-8 items-center justify-center text-muted-foreground",
+        className,
       )}
       {...props}
     >
@@ -180,20 +179,3 @@ function PaginationEllipsis({
 
 export { Pagination, PaginationButton, PaginationEllipsis };
 export type { PaginationProps };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
