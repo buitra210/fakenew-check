@@ -42,7 +42,7 @@ export default function Header() {
         <div className="flex items-center gap-15 w-full">
           <div className="h-full flex items-center justify-start gap-2.5">
             <Link href="/" className="flex items-center">
-              <Image src="/image/logo1.png" alt="Logo" width={35} height={42} />
+              <Image src="/LOGO.png" alt="Logo" width={35} height={42} />
             </Link>
             <h1 className="text-2xl font-semibold hidden md:flex bg-clip-text text-transparent bg-[image:var(--FN-Gradient-2)]">
               CHECKFAKENEW

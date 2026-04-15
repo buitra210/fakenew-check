@@ -4,11 +4,12 @@ import Image from "next/image";
 import { useFormatValue } from "@/src/hooks/useFormatValue";
 import GradientBorderCardV1 from "@/src/components/cards/GradientBorderCardV1";
 import img1 from "@/public/image/img1.png";
-import img2 from "@/public/image/img2.png";
 import img3 from "@/public/image/img3.png";
 import img4 from "@/public/image/img4.png";
+import { useTheme } from "next-themes";
 
 const ContentTotal = () => {
+  const { resolvedTheme } = useTheme();
   const listGeneralInfo = [
     {
       imageSrc: img1.src,
@@ -48,7 +49,11 @@ const ContentTotal = () => {
               <h5 className="text-[23px] font-bold bg-clip-text text-transparent bg-[image:var(--FN-Gradient-1)]">
                 {info.value}
               </h5>
-              <p className="muted text-[15px]">{info.title}</p>
+              <p
+                className={`${resolvedTheme === "dark" ? "muted" : "text-chart-text1"} text-[15px] font-medium`}
+              >
+                {info.title}
+              </p>
             </div>
           </div>
         </GradientBorderCardV1>

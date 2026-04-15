@@ -46,6 +46,9 @@
     #6913cb 100%
   );
   --text-shadow: rgba(80, 30, 160, 0.3);
-  --card-bg: #fbfafa;
+  --card-bg: #f8faf9;
   --body-bg: #fffbfe;
+  --tooltip: #ffffff;
+  --chart-text1: #383535;
+  --chart-girdline: #cecaca;
 }
