@@ -46,6 +46,11 @@
     #6913cb 100%
   );
   --text-shadow: rgba(80, 30, 160, 0.3);
-  --card-bg: #fbfafa;
+  --card-bg: #f8faf9;
   --body-bg: #fffbfe;
+  --tooltip: #ffffff;
+  --chart-text1: #383535;
+  --chart-girdline: #cecaca;
+  --FN-Gradient-3: linear-gradient(150deg, #bde9e0 10%, #0fb490 80%);
+  --FN-Gradient-4: linear-gradient(150deg, #5392df 10%, #732cc5 80%);
 }

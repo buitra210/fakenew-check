@@ -51,4 +51,9 @@
   --text-shadow: rgba(255, 255, 255, 0.7);
   --card-bg: #1a1b1f;
   --body-bg: #07090f;
+  --tooltip: #292929;
+  --chart-text1: #8d8d8d;
+  --chart-girdline: #393939;
+  --FN-Gradient-3: linear-gradient(150deg, #fff 30%, #4de5c5 70%);
+  --FN-Gradient-4: linear-gradient(150deg, #6aabfb 30%, #9133ff 70%);
 }
