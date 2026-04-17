@@ -51,4 +51,6 @@
   --tooltip: #ffffff;
   --chart-text1: #383535;
   --chart-girdline: #cecaca;
+  --FN-Gradient-3: linear-gradient(150deg, #bde9e0 10%, #0fb490 80%);
+  --FN-Gradient-4: linear-gradient(150deg, #5392df 10%, #732cc5 80%);
 }

@@ -58,7 +58,9 @@ export default function GraphSection({
     <GeneralCard className="mt-4">
       <div>
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          {/* Range selector */}
+          <h3 className="text-lg font-medium text-foreground">
+            Daily Trend Analysis
+          </h3>
           <div className="flex items-center gap-2">
             {rangeConfigs.map((config) => (
               <button

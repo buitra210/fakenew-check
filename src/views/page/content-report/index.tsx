@@ -2,6 +2,7 @@ import IntroAppPage from "@/src/components/IntroAppPage";
 import ContentTotal from "./ContentTotal";
 import GraphSection from "@/src/components/Graph/GraphSection";
 import { FakeNewSnapshot } from "@/src/hooks/useHighCharts/useLineChartData";
+import DonutChart from "@/src/components/Graph/DonutChart";
 
 // ── Fake data ─────────────────────────────────────────────────────────────────
 function generateFakeSnapshots(): FakeNewSnapshot[] {
@@ -33,11 +34,18 @@ export default function ContentReport() {
         <div className="mt-10">
           <ContentTotal />
         </div>
-        <GraphSection
-          isLoading={false}
-          isSuccess={true}
-          snapshots={fakeSnapshots}
-        />
+        <div className="grid grid-cols-1 md:grid-cols-10 gap-4">
+          <div className="md:col-span-6">
+            <GraphSection
+              isLoading={false}
+              isSuccess={true}
+              snapshots={fakeSnapshots}
+            />
+          </div>
+          <div className="md:col-span-4">
+            <DonutChart />
+          </div>
+        </div>
       </div>
     </>
   );

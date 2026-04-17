@@ -35,7 +35,7 @@ function compactNumber(value: number): string {
   return value.toFixed(2);
 }
 
-function formatNumber(
+export function formatNumber(
   value: number,
   opts: { fractionDigits?: number; prefix?: string } = {},
 ): string {
