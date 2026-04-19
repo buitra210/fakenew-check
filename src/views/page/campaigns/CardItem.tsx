@@ -1,8 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState } from "react";
 import GradientBorderCardV1 from "@/src/components/cards/GradientBorderCardV1";
-import { Link } from "lucide-react";
 const FakeData = [
   {
     title: "Scam Fake VPBank loan approval guarantee scheme",
@@ -109,6 +109,7 @@ function RateConfirm({ rate }: { rate: number }) {
     </div>
   );
 }
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function CampaignCard({ item }: { item: any }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -140,7 +141,7 @@ function CampaignCard({ item }: { item: any }) {
             onClick={() => setIsExpanded(!isExpanded)}
             className="flex items-center gap-1.5 font-semibold text-[15px] hover:opacity-80 transition-opacity mt-2"
           >
-            <span className="bg-clip-text text-transparent bg-[image:var(--FN-Gradient-2)]">
+            <span className="bg-clip-text text-transparent bg-(image:--FN-Gradient-2)">
               {isExpanded ? "Hide related news" : "Show related news"}
             </span>
             <svg
