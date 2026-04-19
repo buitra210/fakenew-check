@@ -140,7 +140,7 @@ function CampaignCard({ item }: { item: any }) {
             onClick={() => setIsExpanded(!isExpanded)}
             className="flex items-center gap-1.5 font-semibold text-[15px] hover:opacity-80 transition-opacity mt-2"
           >
-            <span className="bg-clip-text text-transparent bg-(image:--FN-Gradient-2)">
+            <span className="bg-clip-text text-transparent bg-[image:var(--FN-Gradient-2)]">
               {isExpanded ? "Hide related news" : "Show related news"}
             </span>
             <svg
