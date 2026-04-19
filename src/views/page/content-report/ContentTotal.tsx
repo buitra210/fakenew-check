@@ -36,7 +36,7 @@ const ContentTotal = () => {
     <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
       {listGeneralInfo.map((info, index) => (
         <GradientBorderCardV1 key={index} background="var(--card-bg)">
-          <div className="flex justify-around items-center">
+          <div className="flex justify-around items-center animate-leaderboard-card">
             <div className="flex-1/3">
               <Image
                 src={info.imageSrc}
@@ -46,7 +46,7 @@ const ContentTotal = () => {
               />
             </div>
             <div className="flex-2/3">
-              <h5 className="text-[23px] font-bold bg-clip-text text-transparent bg-[image:var(--FN-Gradient-1)]">
+              <h5 className="text-[23px] font-bold bg-clip-text text-transparent bg-(image:--FN-Gradient-1)">
                 {info.value}
               </h5>
               <p

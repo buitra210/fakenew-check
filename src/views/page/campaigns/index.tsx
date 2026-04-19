@@ -1,5 +1,6 @@
 import IntroAppPage from "@/src/components/IntroAppPage";
 import CardItem from "./CardItem";
+import TableDetect from "./TableDetect";
 
 export default function Campaigns() {
   return (
@@ -10,6 +11,9 @@ export default function Campaigns() {
       />
       <div className="mt-10">
         <CardItem />
+      </div>
+      <div className="mt-10">
+        <TableDetect />
       </div>
     </div>
   );
